@@ -1,0 +1,45 @@
+<h1>Names</h1>
+
+<p>At Fred's behest, the (human) members of Big Hero 6 meet at his house to decide on their superhero names. Each one writes down their top 3 name choices. But no team of superheroes can have multiple members with the same name, because that would be very confusing. Is it possible for everyone to get their #1 name choice without any two people getting the same name? Or will someone be disappointed?</p>
+
+<p>Names are considered the same if they have exactly the same characters, including case. For example, "Superman" is not the same as "superman".</p>
+
+<h4>Input</h4>
+
+<p>The first line of input contains a single integer T, the number of test cases. T test cases follow.</p>
+
+<p>Each test case consists of 5 lines, each containing three space-separated names X, Y, Z (with X being the #1 choice and Z being the #3 choice). The lines correspond to the name choices of Fred, Hiro, GoGo, Wasabi, and Honey Lemon, respectively.</p>
+
+<h4>Output</h4>
+
+<p>Your program should output T lines, one for each test case. If it is possible for everyone to get their #1 name choice, the content of the line should be "HAPPINESS" (without the quotes); otherwise, the content of the line should be "DISAPPOINTMENT" (without the quotes).</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 20
+1 <= |X|, |Y|, |Z| <= 20
+
+All characters in the strings are upper- or lowercase letters A-Z.
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+1
+A B C
+D E F
+G H I
+J K L
+M N O
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+HAPPINESS
+</pre>
+
+<h4>Explanation</h4>
+
+<p>In this scenario, Fred would be named A, Hiro would be named D, GoGo would be named G, Wasabi would be named J, and Honey Lemon would be named M (all of these names are unique).</p>

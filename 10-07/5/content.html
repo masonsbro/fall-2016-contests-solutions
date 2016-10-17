@@ -1,0 +1,50 @@
+<h1>Avengers</h1>
+
+<p>The Avengers have arrived at the UT Tower and need to get to the top to stop the super villain, sleep deprivation, from taking over the campus. Unfortunately the heroes are all feeling rather sleepy themselves and have decided to take the escalators to the top instead flying or climbing.</p>
+
+<p>The escalators in the UT Tower each move at different speeds and only visit certain floors. Because UT allowed the math department to design the escalators (it seemed like a good idea at the time) each of the escalators stops at a floor that is a multiple of some positive integer. Floors are zero indexed (the first floor is floor zero, and the top floor is the number of floors minus one). For the purpose of this problem zero is divisible by every number, so all escalators stop at floor zero.</p>
+
+<p>Given the starting floor for each of the superheroes and assuming they arrive at their starting floor at time zero, what is the earliest time at which all of the superheroes could arrive on the top floor?</p>
+
+<h4>Input</h4>
+
+<p>The input begins with a single integer T, the number of test cases. Each of the test cases starts with three integers, E, F, and H, which represent the number of escalators in the building, the number of floors in the building, and the number of superheroes. The next E lines begin with two integers, S and N. S is the number of seconds it takes the escalator to ascend or descend by one floor and N is the number by which the floor number must be divisible. After these two integers a string that will be either "UP" or "DOWN". UP indicates that the escalator is moving upward toward higher floors and DOWN indicates that the escalator is moving downward toward lower floors.</p>
+
+<p>The next line contains H integers, each representing the starting floor of one of the heroes.<p>
+
+<h4>Output</h4>
+
+<p>Output the earliest time at which all of the superheroes could arrive at the top floor, given that each superhero arrives at the building at time 0 and can switch between escalators instantly. If it is not possible for all of the superheroes to get to the top floor, print out "IMPOSSIBLE".</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 10
+1 <= E <= 100
+1 <= F, H, N <= 30000
+1 <= S <= 1000
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+2
+2 10 1
+5 2 DOWN
+1 9 UP
+2
+1 10 2
+5 2 DOWN
+3 5 
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+19
+IMPOSSIBLE
+</pre>
+
+<h4>Explanation</h4>
+
+<p>In the first test case, the superhero can go down to floor zero (cost of 10) and then up to floor 9 (cost of 9) for a total time of 19 seconds. In the second test case the only escalator goes down, so the superheroes cannot reach the top floor.</p>

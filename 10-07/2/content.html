@@ -1,0 +1,42 @@
+<h4>Superman</h4>
+
+<p>Superman has taken on a newfound Robin Hood streak and has decided to steal some precious metal from the bank to give to the needy.</p>
+
+<p>The bank has all sorts of different metal bars, each with varying values. Even with his super strength, Superman can only carry so much at once. Superman needs your help to figure out what the maximum amount of money he can donate is, given this weight W. Fortunately, Superman has heat vision and can therefore split any of the bars any way that he likes.</p>
+
+<h4>Input</h4>
+
+<p>The input will begin with a single integer T, the number of test cases. T cases follow. The first line of each case contains two integers, B and W, which represent the number of different kinds of bars the bank has and the maximum weight that superman can carry. B lines follow. Each line is formatted as N, M, and V. N represents the number of that particular kind of bar that the bank has, M is the weight of a single bar in pounds, and V is the value of that kind of metal, in dollars per pound.</p>
+
+<h4>Output</h4>
+
+<p>For each test case output a single integer on a new line, the maximum value that Superman could "donate".</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 10
+1 <= B <= 500
+1 <= W <= 500000000
+1 <= N, M <= 1000
+1 <= V <= 100000
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+1
+2 4
+2 2 6
+1 3 1
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+24
+</pre>
+
+<h4>Explanation</h4>
+
+<p>Superman can take both of the most valuable bars, resulting in stealing 4 pounds of metal at 6 dollars per pound for a total of $24.</p>

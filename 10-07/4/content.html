@@ -1,0 +1,53 @@
+<p>Alfred has laid out Batman's N gizmos and gadgets in a line on a table in Wayne
+Manor. Joker has hacked into Wayne manor and wants to steal as many of the
+gadgets as he can. Since Joker is only present in Wayne Manor virtually, he can
+only command a robot to start at some gadget, pick up some number gadgets in a
+row beginning with that one, and then escape Wayne manor as fast as possible.
+Note that the robot cannot skip over gadgets.</p>
+
+<p>In order for this heist to be worthwhile, Joker wants to steal K unique
+gadgets. However, to avoid suspicion, Joker wants to take as few gadgets as
+possible. What is the minimum number of gadgets Joker must steal to have K
+unique gadgets?</p>
+
+<h4>Input</h4>
+
+<p>The first line contains a positive integer T - the number of test cases.</p>
+
+<p>Each test case consists of two lines. The first line is two space-separated
+integers: N, the total number of gadgets laid out on the table in Wayne manor
+and K, the minimum number of unique gadgets Joker wants to steal.</p>
+
+<p>The second line is a series of space-separated strings, the names of the
+gadgets. All names will only contain lowercase letters between 'a' and 'z'.</p>
+
+<h4>Output</h4>
+
+<p>For each test case, print a single number, the minimum number of gadgets Joker
+must steal in order to acquire K unique gadgets. If it's impossible for Joker
+to steal K unique gadgets, print -1.</p>
+
+<h4>Constraints</h4>
+
+<pre>1 <= T <= 10
+1 <= K <= N <= 100,000
+1 <= length of gadget name <= 10
+</pre>
+
+<h4>Sample Input</h4>
+<pre>2
+5 3
+stick spray stick stick bat
+1 1
+hook
+</pre>
+
+<h4>Sample Output</h4>
+<pre>4
+1
+</pre>
+
+<h4>Explanation</h4>
+
+<p>In order to take 3 unique gadgets, Joker must take the items between the spray
+and the bat.</p>

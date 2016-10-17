@@ -1,0 +1,78 @@
+<h1>Chum</h1>
+
+<p>Sheldon J. Plankton has been trying to undermine Bikini Bottom's restaurants in order to boost business at the Chum Bucket. It is up to Mermaid Man and Barnacle Boy to save the townsfish from having to eat chum all the time.</p>
+
+<p>Mermaid Man realizes that restaurants rely on other businesses for their ingredients--for example, the Krusty Krab gets the meat for its Krabby Patties from an external supplier. Of course, Plankton realized this too, so in addition to destroying restaurants he also destroyed ingredient suppliers.</p>
+
+<p>More specifically, Plankton managed to shut down N (the first K of which are restaurants) businesses in Bikini Bottom. Some of these businesses depend on other businesses, and some (but not necessarily all) businesses he shut down are restaurants. Mermaid Man and Barnacle Boy only care about restoring restaurants to operation: they get no benefit for restoring a non-restaurant business (except for any benefit they may get from restoring restaurants that depend on this business).</p>
+
+<p>For example, suppose Plankton shut down 5 businesses (numbered 1 through 5), where businesses 1 and 2 are restaurants, and the dependency relations between businesses are as follows:</p>
+
+<ul>
+    <li>Business 1 requires that businesses 2 and 5 are open.</li>
+    <li>Business 2 requires that business 4 is open.</li>
+    <li>Business 3 requires that business 4 is open.</li>
+    <li>Business 4 requires that business 5 is open.</li>
+    <li>Business 5 requires that business 3 is open.</li>
+</ul>
+
+<p>There are a couple of things to note. First, business 1 depends on business 5 in two ways (directly and indirectly, through business 2). Also note that there is a cycle: business 3 depends on business 4, which depends on business 5, which depends on business 3. In this case, Mermaid Man and Barnacle Boy can restore all three of these businesses to operation, but they could not choose to restore, say, business 4 and business 5 only (doing so would be useless, because business 5 needs business 3). Finally, note that some businesses (both restaurants and ingredient suppliers) may require that some restaurants be open. For example, business 5 relies on business 3, even though business 3 is a restaurant (perhaps business 5 cannot open without a contract with business 3 for a certain amount of ingredients, or maybe the employees at business 5 just like to eat at business 3 and refuse to come to work if that's not an option).</p>
+
+<p>Mermaid Man and Barnacle Boy want to decide which restaurants to reopen. Each restaurant would give them some amount of satisfaction H_i to reopen, but this amount can differ by restaurant. (Would you rather reopen Qdoba or JCL? That's right, Qdoba.)</p>
+
+<p>But the heroes' time is valuable! For every hour they spend reopening businesses, they lose some amount of satisfaction S. This is their opportunity cost: they think they could have gained S satisfaction by doing some activity other than fighting crime (perhaps sleeping, or watching television). Each business takes a particular amount of time, Y_i, to reopen. For example, if there is a restaurant with no dependencies that is worth H_i = 5 satisfaction to reopen, and it takes Y_i = 2 hours to reopen, and the heroes' opportunity cost is S = 2 per hour, then the "net satisfaction" Mermaid Man and Barnacle Boy derive from reopening this restaurant is 1.</p>
+
+<p>Given descriptions of the N business's dependency relations, the heroes' hourly opportunity cost, the satisfaction each restaurant is worth, and the time it takes to reopen each business, can you help Mermaid Man and Barnacle Boy find the maximum amount of satisfaction (possibly zero) they can gain by reopening businesses?</p>
+
+<h4>Input</h4>
+
+<p>The first line contains a single integer T, the number of test cases. T test cases follow.</p>
+
+<p>Each test case begins with three integers, N, K, S, and D: the number of businesses Plankton shut down, the number of restaurants among these businesses (the restaurants are the businesses numbered 1 through K), the hourly opportunity cost for Mermaid Man and Barnacle Boy, and the number of restaurant dependency relations. The next D lines each contain two integers, U and V, describing a single dependency relation. This means that business U can only reopen if business V is also reopened. The next line contains N integers Y_i, the amount of time it takes to reopen the ith business. The final line contains K integers H_i, the amount of satisfaction Mermaid Man and Barnacle Boy would derive from reopening restaurant i.</p>
+
+<h4>Output</h4>
+
+<p>Your program should output T lines, one for each test case. Each line is the maximum amount of satisfaction Mermaid Man and Barnacle Boy can get from reopening restaurants. Note that it may be optimal to choose to reopen no restaurants and instead stay home and watch TV, in which case the maximum satisfaction they can get is zero.</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 20
+1 <= K <= N <= 700
+0 <= S <= 20
+0 <= D <= 700
+1 <= U, V <= N
+0 <= Y_i <= 20
+0 <= H_i <= 400
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+2
+1 1 2 0
+2
+10
+5 2 1 6
+1 2
+1 5
+2 4
+3 4
+4 5
+5 3
+1 2 3 4 5
+10 8
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+6
+3
+</pre>
+
+<h4>Explanation</h4>
+
+<p>In the first test case, we have a single restaurant that would cost 4 satisfaction (2 hours at an opportunity cost of 2 per hour) and reward 10 satisfaction to reopen. Mermaid Man and Barnacle Boy will reopen this restaurant and gain a net 6 satisfaction.</p>
+
+<p>In the second test case, we have the business dependency relations given in the example above. If Mermaid Man and Barnacle Boy want to reopen either restaurant, they will need to reopen business 3, 4, and 5 as well. The best choice is to reopen all the businesses: they lose 15 satisfaction by spending 15 hours reopening businesses, but they gain 18 satisfaction by reopening the two restaurants, for a net satisfaction gain of 3.</p>
