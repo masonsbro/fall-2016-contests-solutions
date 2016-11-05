@@ -14,9 +14,8 @@ for t in range(T):
     for m in range(M):
         U, V, W = map(int, raw_input().split())
         edges.append((U, V, W))
-    most = {i: -1 for i in range(1, N + 1)}
+    most = {i: 0 for i in range(1, N + 1)}
     reach = {i: False for i in range(1, N + 1)}
-    most[1] = 0
     reach[1] = True
     first = bf(edges, most, reach, N)
     second = bf(edges, most, reach, N)
