@@ -1,0 +1,86 @@
+<h1>Business</h1>
+
+<p>Derek is looking to build a business on Pinterest using Pinterest's new
+buyable pin feature (you can buy items displayed in pins). Pins are units of
+content on Pinterest. Derek wants this to be an arts and crafts business, but
+he doesn't know any of the business side and wants you to keep track of all
+things money and inventory. Given the appropriate information regarding Derek's
+business, and a series of orders for some of his buyable pins, can you
+determine how much Derek will profit in total?</p>
+
+<p>Each buyable pin that Derek owns will be an arts and crafts project. Each
+project (pin) will have a required list of crafts and will use exactly 1 unit
+of each resource required for that craft (this applies to EVERY craft that he
+makes). Each resource for a craft is sold in packages. A package contains some
+number of items and a price so Derek can buy in bulk (i.e. 2 bottles of glue
+for $10 total). Derek originally starts out with 0 of each resource, and you
+must purchase enough packages to fill each order. If you have remaining
+supplies after an order, you may use them for a future order that requires
+those supplies. The profit of Derek's business is determined by his total
+revenue minus his total costs.</p>
+
+<h4>Input</h4>
+<p>The first line of input will be an integer T, the number of test cases. The
+first line of each test case will contain three integers, N M and O. N
+represents the number of buyable pins that Derek will have, M represents the
+number of packages that Derek can buy and O represents the number of orders for
+his pins. The next 2*N lines will contain a string, an int and a list of
+strings, representing the pin name, price and the supplies required to build
+the craft for the pin. The next M lines will contain a string and two integers,
+where the string represents the name of the supply and the two integers
+represent the amount in bulk you can buy of that supply and the price Derek
+will pay for the supply. The next O lines will each contain a string and an
+int, where the string represents the pin name that a customer has ordered and
+the int represents the NUMBER of that pin that the customer ordered (i.e. if
+the pin displays a pair of shoes, and the customer wants multiple pairs of the
+shoes, he can buy more than one pair at a time).</p>
+
+<h4>Output</h4>
+<p>For each tag in each test case, print out the profit that Derek will make
+from his business.</p>
+
+<h4>Constraints</h4>
+<pre>
+1 <= T <= 10
+1 <= N <= 100
+1 <= M <= 100
+1 <= O <= 100
+</pre>
+
+<h4>Sample Input</h4>
+<pre>1
+2 3 3
+FRAME1 10
+GLUE GLITTER WOOD
+FRAME2 5
+GLUE WOOD
+GLUE 2 3
+GLITTER 1 2
+WOOD 3 4
+FRAME1 2
+FRAME1 1
+FRAME2 2</pre>
+
+<h4>Sample Output</h4>
+<pre>
+17
+</pre>
+
+<h4>Sample Output Explanation</h4>
+<p>For the first order, we will need enough supplies for two FRAME1s. To get
+this, we must buy 1 bulk of GLUE (comes with 2) for $3, 2 bulks of GLITTER for
+$4 total and 1 bulk of WOOD for $4 total. This brings our total costs to $11.
+Then, after the order, we use 2 of our GLUE, 2 of our GLITTER and 2 of our
+WOOD. Our next order is 1 FRAME1. This will require 1 GLUE, 1 GLITTER and 1
+WOOD. Since we have 0 GLUE and 0 GLITTER, we will need to buy one bulk of each
+for $3 and $2 ($5 total). Since we have 1 WOOD left over from the previous
+purchase, we don't need to buy more wood. This brings our total costs to $16.
+We then use one of our WOOD, GLUE and GLITTER each to complete the order. For
+our last order, 2 FRAME2s, we will need 2 GLUEs and 2 WOODs. We have 1 GLUE
+remaining from the previous order, but we still need one more and so we will
+have to buy another bulk of GLUE for $3. We then have to buy one 1 package of
+WOOD for $4, which brings our total cost to $23.</p>
+
+<p>Once we have the total costs, we can simply subtract that from our total
+revenue, which is 2*10 + 1*10 + 2*5 = 40. Our total profit is 40 - 23 = 17,
+which means we output 17.</p>

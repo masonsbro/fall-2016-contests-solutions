@@ -1,0 +1,73 @@
+<h1>Pinergy</h1>
+
+<p>Pinterest is testing a new type of page which requires positive pinergy (pin
++ energy). To view a page that requires positive pinergy, your network request
+needs to build up S pinergy before it reaches the server with the final
+page.</p>
+
+<p>A network request begins at your computer, goes through a DNS lookup, then
+all over the world until it reaches Pinterest's servers. To simplify the
+internet for the purposes of this problem, we just give a list of servers and
+the connections between them. A request begins at server 1, and can travel
+between various servers. The connections between the servers effect the pinergy
+of the request. The request begins with 0 pinergy.</p>
+
+<p>See if it's possible for your request to travel from server 1 to server N
+with pinergy at least S. Note that it's possible to arrive at server N, build
+up some additional pinergy, and then go back to server N.</p>
+
+<h4>Input</h4>
+
+<p>The first line of the input will be a single integer T, the total number of
+test cases.</p>
+
+<p>Each test case begins with three space separated integers, N, M and S, the
+number of servers, the number of connects, and the target pinergy. Following
+that are M lines, each with space separated integers U, V and W, the beginning
+and end of a server connection, as well as the change the server has on the
+pinergy the road has on your speed.</p>
+
+<h4>Output</h4>
+
+<p>For each test case print "YES" if there is a path the packet can take from
+server 1 to destination N that has final speed greater than or equal to S.
+Otherwise, print "NO".</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 15
+1 <= N <= 150
+0 <= M <= 2000
+25 * N <= S <= 1,000,000,000,000,000,000
+1 <= U, V <= N
+-20 <= W <= 20
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+2
+5 5 140
+1 2 20
+2 3 20
+3 4 20
+4 2 20
+4 5 20
+3 2 100
+1 2 20
+2 3 20
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+YES
+NO
+</pre>
+
+<h4>Explanation</h4>
+
+<p>The packet can go from 1 to 2, 2 to 3, 3 to 4, 4 to 2, 2 to 3, 3 to 4, 4 to
+5 will end with total pinergy 140, which is the target. In the second case,
+there is only one path with pinergy 40, so you cannot reach pinergy 100.</p>

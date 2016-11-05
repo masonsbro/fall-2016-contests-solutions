@@ -1,0 +1,70 @@
+<h1>Trees</h1>
+
+<p>You've recently become interested in pictures of trees. You've found several
+pictures of nice trees on Pinterest, and you want to show them to your friends.
+Unfortunately, your friends don't have Pinterest! You can only communicate with
+them via limited text protocols, so you want to find a way to represent your
+trees as strings of text so your friends can enjoy them too.</p>
+
+<p>Specifically, each tree is unrooted and labeled. You decide on encoding your
+tree (with N nodes) as a unique sequence of N - 2 integers, called a
+Pr&uuml;fer sequence. A Pr&uuml;fer sequence is constructed by, at each step
+(until there are only two nodes remaining), removing the leaf node with the
+smallest label (labels are integers between 1 and N) and appending to the
+sequence the label of that node's neighbor.</p>
+
+<p>For example, the Pr&uuml;fer sequence for the following tree is [1, 1, 5].</p>
+
+<img src="http://i.imgur.com/pQQBgPV.png">
+
+<p>Given some trees, can you encode them as Pr&uuml;fer sequences so that you can
+send them to your friends?</p>
+
+<h4>Input</h4>
+
+<p>The first line of input contains a single integer T, the number of test
+cases. T test cases follow.</p>
+
+<p>Each test case begins with a single line containing N, the number of nodes
+in the tree. N - 1 lines follow, describing the edges of the tree (recall that
+the nodes are labeled with integers from 1 to N). Each edge is given as a pair
+of space-separated integers U and V, denoting the two endpoints of the edge.
+All the edges are undirected.</p>
+
+<h4>Output</h4>
+
+<p>Your program should output T lines, one for each test case. The output for
+a test case should be a space-separated sequence of N - 2 integers, the Pr&uuml;fer
+sequence for the given tree.</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 20
+3 <= N <= 1000
+1 <= U, V <= N
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+1
+5
+4 5
+5 1
+1 2
+3 1
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+1 1 5
+</pre>
+
+<h4>Explanation</h4>
+
+<p>This is the example described in the problem statement. We first remove node
+2 and append a 1 to the sequence, then we remove node 3 and append another 1,
+then we remove node 1 and append a 5. There are only two nodes remaining, so we
+are done.</p>

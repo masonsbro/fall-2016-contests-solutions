@@ -1,0 +1,73 @@
+<h1>Colors</h1>
+
+<p>Pinterest wants to introduce a new type of search to their website: color
+searching! Users can upload a hexadecimal color and find pins that are similar
+in color. Unfortunately, you're the one assigned to build the feature, and you
+need to get it done ASAP.</p>
+
+<p>When a user searches for a color and topic, the machine learning team
+figures out what pins the user would be most interested in. Each pin has a
+color, and Your job is to lay out the pins from the color closest to the search
+query.</p>
+
+<p>A color is a 7 character string, where the first character is an octothorpe
+/ hashtag ('#') followed by 6 characters, which can either be digits ('0' -
+'9') or hexadecimal letters ('A'-'F'). Every two characters after the hashtag
+form a byte (number in the range 0-255, inclusive), representing a color. The
+first byte represents the red part of the color, the next byte represents the
+green part of the color, and the final byte represents the blue part of the
+color.</p>
+
+<p>The "distance" from one color to another can be calculated by the Euclidean
+color distance. If the first color has values r1, g1, b1 and the second color
+has values r2, g2, b2, then the distance between the two colors is sqrt((r1 -
+r2)^2 + (g1 - g2)^2 + (b1 - b2)^2).</p>
+
+<p>Given a search query and a list of pins and their colors, print out the pins
+from least distance to the query to greatest distance to the query.</p>
+
+<h4>Input</h4>
+
+<p>The input will begin with integer T, the number of test cases.</p>
+
+<p>Each test case will begin with C and N, the query color and the number of
+pins returned by the machine learning team. The next N lines will each contain
+the color of a pin. All colors will be in the format listed above.</p>
+
+<h4>Output</h4>
+
+<p>For each test case, print a line "Case C:" where C is the query color. After
+that, print N lines, the pins given to you in order of color, sorted by the
+colors closest to C. If two colors are the same distance, sort them
+lexicographically (using your language's native string comparison function).
+Do not print blank lines.</p>
+
+<h4>Constraints</h4>
+
+<pre>
+1 <= T <= 100
+1 <= N <= 10,000
+</pre>
+
+<h4>Sample Input</h4>
+
+<pre>
+1
+3 #FFFFFF
+#ACDCDC
+#EFFEFF
+#DEADBF
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+Case #FFFFFF:
+#EFFEFF
+#ACDCDC
+#DEADBF
+</pre>
+
+<h4>Explanation</h4>
+
+<p>Sorted by the Euclidean color distance, this is the best ordering.</p>

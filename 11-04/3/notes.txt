@@ -1,0 +1,35 @@
+3 F1
+2 F2
+
+Need:
+
+5 Glue
+3 Glitter
+5 Wood
+
+Units:
+3 Glue
+3 Glitter
+2 Wood
+
+Costs:
+9 for glue
+6 for glitter
+8 for glue
+
+total cost is 23
+
+Time based accounting:
+First order needs 2 glue, glitter, wood.
+Purchase 1 glue unit, 2 glitter unit, 1 wood unit
+Remaining (0, 0, 1), cost is 3+4+4 = 11
+
+Second order needs 1 glue, glitter, wood.
+Purchase 1 glue unit, 1 glitter unit.
+Remaining(1, 0, 0), cost is 3+2 = 5
+
+Third order needs 2 glue, 2 wood
+purchase 1 glue unit, 1 wood unit
+Remaining(1, 0, 2), cost + 3+4 = 7
+
+11 + 5 + 7 = 23

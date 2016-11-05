@@ -1,0 +1,91 @@
+<h1>Tags</h1>
+
+<p>Pinterest wants to build an internal tool that lets them see the amount of
+time at least 1 user was viewing pins of a particular tag. A pin is a unit of
+content on Pinterest and a tag is a word that describes the pin. Pins can have
+multiple tags each. Pinterest has tasked you with building this tool. Lucky for
+you, Pinterest has given you enough data to work with in order to build it.</p>
+
+<p>You will first be given each pin ID and a list of its tags. Then you will be
+given a series of time intervals along with a pin id, where the time interval
+represents the time frame a particular user was viewing that pin. Lastly, you
+will be given a series of tags. For each tag, output the amount of time there
+was at least 1 user viewing pins of that tag. If no users viewed pins of that
+tag, output 0.</p>
+
+<h4>Input</h4>
+
+<p>The first line of input will be an integer T, the number of test cases. The
+first line of each test case will contain three integers, N, M and Q. N
+represents the number of pins, M represents the amount of data (time ranges
+that a pin was viewed for) that Pinterest will give you and Q represents the
+number of tags that will be queried for this tool. The next 2*N lines will each
+contain the pin id (int) and the list of tags (strings) for that pin id. The
+next M lines after that will each contain 3 integers, the pin id, the start of
+the time range and the end of the time range.  Note that the time range, [A,B],
+is inclusive. This means that times A and B are included in the range [A,B].
+The next Q lines will each contain a single string, the tag being queried.</p>
+
+<h4>Output</h4>
+
+<p>For each tag in each test case, print the amount of time that pins with that
+tag were being viewed by at least 1 user.</p>
+
+<h4>Constraints</h4>
+<pre>
+1 <= T <= 10
+1 <= N <= 100
+1 <= M <= 500
+1 <= Q <= 10000
+1 <= Number of tags <= 1000
+0 <= A <= 1000
+1 <= B <= 10^9
+</pre>
+
+<h4>Sample Input</h4>
+<pre>
+2
+3 3 1
+1
+dogs cats
+2
+dogs
+3
+cats
+1 10 20
+2 15 21
+3 12 24
+cats
+3 5 1
+1
+dogs cats mice
+2
+dogs
+3
+cats
+1 10 20
+2 15 21
+3 12 24
+1 1 5
+2 14 15
+cats
+</pre>
+
+<h4>Sample Output</h4>
+
+<pre>
+15
+20
+</pre>
+
+<h4>Sample Output Explanation</h4>
+
+<p>In the first test case, we only have 1 query, which is for tag "cats". We
+know that pins 1 and 3 both have the cat tag, so we first must find the viewed
+time ranges for those pins, [10, 20] and [12,24]. The time at least 1 user was
+viewing pins of the tag "cats" is 15, so we output 15.</p>
+
+<p>In the second test case, we only have one query which is also for tag
+"cats". Once again, pins 1 and 3 have the tag "cats" and have been viewed at
+time ranges [10, 20], [1,5] and [12, 24]. The amount of time covered by these
+ranges is 20, so we output 20.</p>

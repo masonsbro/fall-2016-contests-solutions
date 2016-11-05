@@ -1,0 +1,9 @@
+{
+    "time": {
+        "python": 10,
+        "java": 4,
+        "cpp": 2,
+    },
+
+    "memory": 256,
+}

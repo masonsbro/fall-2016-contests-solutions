@@ -1,0 +1,82 @@
+<h1>Wedding</h1>
+
+<p>You've been planning your wedding on Pinterest for ages, little did you know
+that your best friend would get married before you! Being the friend that you
+are, you want to plan your friend's wedding using your Pinterest board. You
+have some number of wedding activities on your Pinterest board. Each activity
+a_i has some excitement value e_i and some cost c_i. As the wedding goes on the
+excitement of the bride is equal to the sum of all of the activities that she
+has participated in, including an activity that she might currently be
+participating in. Her excitement before the wedding is 0, and her excitement at
+the end of the wedding should be equal to the sums of the excitement values for
+all of the activities. Note that you can use an activity as many times as you
+like (the guests aren't easily bored!), though you must pay the cost each time
+you plan the activity.</p>
+
+<p>You want to plan the activities such that:</p>
+<ol>
+    <li>The excitement of the bride at the end of the wedding is exactly equal
+        to some value G</li>
+    <li>The excitement level of the bride at no point during the wedding
+        exceeds some value M (note that it may be equal to M) so that the happy
+        couple doesn't get overwhelmed</li>
+    <li>The total cost of all of the activities that you use doesn't exceed
+        some value T (note that it may be equal to T)</li>
+</ol>
+
+<p>Since this problem sounds like a lot of math you decide to write a program
+to determine whether or not it is possible to plan such a wedding, and if it
+is, what all of the different activity orders could look like.</p>
+
+<h4>Input</h4>
+<p>The first line of each test case begins with a single integer Z, the number
+of test cases. The Z test cases each start with a line containing an integer
+and three doubles, the number of activities you have pinned (A), and then G, M,
+and T as described above.</p>
+
+<p>The next A lines each start with a string representing the name of the
+activity that you are considering followed by the amount of excitement the
+activity gives (as a double), and the cost of the activity (as a double),
+delimited by a single whitespace. All double values will have exactly two
+decimal places. The name of the activity will contain only lower case
+letters.</p>
+
+<h4>Output</h4>
+<p>Begin each test case with a line "CASE: N" where N is the one indexed case
+number. Then print out each unique wedding that you could plan on a new line. A
+unique wedding is defined as a wedding where there are no other weddings of the
+same length that have the same activities in the same order. Sort the potential
+weddings such that the weddings that contain the fewest number of activities
+are printed first. After that print the weddings out such that their string
+representations are in alphabetical order. The string representation of a
+wedding is the name of each of the activity in order with " -> " printed
+between each activity. If it is not possible for you to plan such a wedding,
+print out "IMPOSSIBLE". Print a single blank line at the end of each test
+case.</p>
+
+<h4>Constraints</h4>
+<pre>
+1 <= Z <= 10
+1 <= A <= 5
+1.00 <= G <= 10.00
+1.00 <= M <= 20.00
+1.00 <= T <= 8.00
+-20.00 <= e_i <= 20.00 
+1.00 <= c_i <= 10.00
+</pre>
+
+<h4>Sample Input</h4>
+<pre>
+1
+2 7.00 10.00 10.00
+vows 4.00 5.00
+cake 3.00 5.00
+</pre>
+
+<h4>Sample Output</h4>
+<pre>
+CASE: 1
+cake -> vows
+vows -> cake
+</pre>
+

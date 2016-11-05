@@ -1,0 +1,37 @@
+<h1>Pinspired</h1>
+
+<p>One of the most fun parts of working at Pinterest is, of course, all the Pintastic puns! Abigail just finished up her last day as a Pintern and took an awesome picture. Now she just needs to caption it and post it on Instagram for all of her friends to see. Knowing the importance of collaboration, Abigail asks you to help her come up with the best possible caption. Abigail has come up with some number of captions and wants you to determine which one she should post. Being the pun lover that you are, you decide to rate her suggestions based on how many puns on the word pin they contain. In order to be a pun on the word pin a word must: </p>
+
+<ol>
+	<li>Contain the word pin</li>
+	<li>Not be only the word pin, pins, pinned, pinning, pinner, or pinners (those aren't puns!)</p>
+</ol>
+
+<p>Given that the score of a phrase is the number of puns that that phrase contains, can you print out the score for each of Abigail's suggestions? Note that the capitalization of a word doesn't matter, So both pintern and PiNtErN are puns. Also note that Abigail is sensible and won't come up with any words that are concatenations of the words listed above. So none of Abigail's suggestions will ever contain words like pinnedpinners, pinpinning, pinningpinning, etc.</p>
+
+<h4>Input</h4>
+<p>The first line will contain a single integer T, the number of test cases. The next T lines will each contain one of Abigail's suggestions. Each of Abigail's suggestions will consist of only upper case and lower case letters and spaces. Each word will be separated by exactly one white space.</p>
+
+<h4>Output</h4>
+<p>For each test case, print out a single integer on a new line, the score of the phrase.</p>
+
+<h4>Constraints</h4>
+<pre>1 <= T <= 10
+Each test case will contain at most 20 words
+Each word will contain at most 20 letters
+</pre>
+
+<h4>Sample Input</h4>
+<pre>2
+Pinterest works to always put pinners first
+I had a pintastic time pinning pinspirational pins as a Pintern at Pinterest this summer
+</pre>
+
+<h4>Sample Output</h4>
+<pre>1
+4
+</pre>
+
+<h4>Sample Output Explanation</h4>
+<p>In the first case the only pun is Pinterest since pinners by itself isn't a pun. In the second case pintastic, pinspirational, Pintern, and Pinterest are all puns, but pinning and pins are not.</p>
+

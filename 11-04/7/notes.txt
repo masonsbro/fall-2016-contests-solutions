@@ -1,0 +1,3 @@
+I'm going to forget if I don't leave a note here.
+
+The numbers are given as doubles with exactly two digits of precision. However, you can't multiply and cast because that causes double precision issues. For example, -9.45 becomes -9.44 unless you do a string replace.
